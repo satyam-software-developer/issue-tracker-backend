@@ -1,0 +1,44 @@
+
+<div class="container w-50 border rounded shadow-lg p-4 m-auto"
+    style="background: #f7f9fc; border-color: #d3d6db;">
+    <!-- This container holds the project details with a set width (50%) and custom styling -->
+    <!-- The container has padding (p-4), a border, rounded corners, and a shadow effect for a modern look -->
+    <!-- Background color and border color are customized inline to match the design -->
+
+    <!-- Project Name -->
+    <div class="mb-3">
+        <h3 class="text-center py-3"
+            style="background-color: #527db4; color: #ffffff; border-radius: 8px;">
+            <!-- Display project name in a centered header -->
+            <!-- Background color is set to a blue shade, with white text for contrast -->
+            Project: <%= project.name %>
+            <!-- Dynamically insert the project's name using EJS -->
+        </h3>
+    </div>
+
+    <!-- Author -->
+    <div class="mb-3">
+        <h4 class="py-3"
+            style="background-color: #dbe4f1; color: #333333; border-radius: 8px;">
+            <!-- Display project author with a light background color -->
+            <!-- Text color is dark gray to maintain readability -->
+            Author: <%= project.author %>
+            <!-- Dynamically insert the author's name using EJS -->
+        </h4>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+        <h5 class="py-3"
+            style="background-color: #cce5ff; color: #0a0b0e; border-radius: 8px;">
+            <!-- Display project description with a soft blue background -->
+            <!-- The text color is a very dark shade for better contrast and readability -->
+            Description: <%= project.description %>
+            <!-- Dynamically insert the project description using EJS -->
+        </h5>
+    </div>
+</div>
+
+<!-- Include Issues Section -->
+<!-- This line includes the issues section as a partial view from the '_issues.ejs' file -->
+<%- include('./partials/_issues'); %>

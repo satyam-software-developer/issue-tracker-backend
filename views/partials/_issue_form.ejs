@@ -1,0 +1,205 @@
+<!-- This partial contains a form to create issues in the project -->
+<!-- Button trigger modal -->
+<div class="text-end my-3">
+    <button
+        type="button"
+        class="btn btn-danger fw-bold px-4 py-2 shadow"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal">
+        + Create Issue
+    </button>
+</div>
+
+<!-- Modal -->
+<div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content shadow-lg rounded">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title fw-bold" id="exampleModalLabel">
+                    Create a New Issue
+                </h5>
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <form
+                class="border border-light border-3 p-3"
+                action="/project/<%=project._id%>"
+                method="POST"
+                style="background-color: #f8f9fa; border-radius: 10px;">
+                <div class="row mb-3 m-auto">
+                    <label for="titlelabel"
+                        class="col-sm-4 col-form-label fw-bold">
+                        Title
+                    </label>
+                    <div class="col-sm-8">
+                        <input
+                            type="text"
+                            name="title"
+                            placeholder="Enter the title"
+                            required
+                            class="form-control shadow-sm"
+                            id="titlelabel" />
+                    </div>
+                </div>
+                <div class="row mb-3 m-auto">
+                    <label for="descriptionlabel"
+                        class="col-sm-4 col-form-label fw-bold">
+                        Description
+                    </label>
+                    <div class="col-sm-8">
+                        <textarea
+                            name="description"
+                            placeholder="Describe your issue..."
+                            required
+                            class="form-control shadow-sm"
+                            id="descriptionlabel"
+                            style="height: 100px"></textarea>
+                    </div>
+                </div>
+
+                <% if (project.labels.length > 0) { %>
+                <div class="dropdown mb-3 text-center">
+                    <button
+                        class="btn btn-secondary dropdown-toggle shadow-sm"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Available Labels
+                    </button>
+
+                    <ul class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton1">
+                        <% for (let label of project.labels) { %>
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="#"
+                                style="color: #007bff; font-weight: 500;">
+                                <%= label %>
+                            </a>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+                <% } %>
+                <div class="row mb-3 m-auto">
+                    <label for="labels"
+                        class="col-sm-4 col-form-label fw-bold">
+                        Add Labels
+                    </label>
+
+                    <div class="col-sm-8">
+                        <div>
+                            <input
+                                class="form-check-input"
+                                name="labels"
+                                type="checkbox"
+                                value="Bug"
+                                id="bug" />
+                            <label
+                                class="form-check-label"
+                                for="bug"
+                                style="color: #d9534f;">
+                                Bug
+                            </label>
+                        </div>
+                        <div>
+                            <input
+                                name="labels"
+                                class="form-check-input"
+                                type="checkbox"
+                                value="UI Improvement"
+                                id="ui-improvement" />
+                            <label
+                                class="form-check-label"
+                                for="ui-improvement"
+                                style="color: #5bc0de;">
+                                UI Improvement
+                            </label>
+                        </div>
+                        <div>
+                            <input
+                                name="labels"
+                                class="form-check-input"
+                                type="checkbox"
+                                value="Documentation"
+                                id="documentation" />
+                            <label
+                                class="form-check-label"
+                                for="documentation"
+                                style="color: #5cb85c;">
+                                Documentation
+                            </label>
+                        </div>
+                        <div>
+                            <input
+                                name="labels"
+                                class="form-check-input"
+                                type="checkbox"
+                                value="Enhancement"
+                                id="enhancement" />
+                            <label
+                                class="form-check-label"
+                                for="enhancement"
+                                style="color: #f0ad4e;">
+                                Enhancement
+                            </label>
+                        </div>
+                        <div>
+                            <input
+                                name="labels"
+                                class="form-check-input"
+                                type="checkbox"
+                                value="Duplicate"
+                                id="duplicate" />
+                            <label
+                                class="form-check-label"
+                                for="duplicate"
+                                style="color: #0275d8;">
+                                Duplicate
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3 m-auto">
+                    <label for="authorlabel"
+                        class="col-sm-4 col-form-label fw-bold">
+                        Author
+                    </label>
+                    <div class="col-sm-8">
+                        <input
+                            type="text"
+                            name="author"
+                            placeholder="Enter author name"
+                            required
+                            class="form-control shadow-sm"
+                            id="authorlabel" />
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button
+                        type="button"
+                        class="btn btn-secondary shadow-sm"
+                        data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button
+                        type="submit"
+                        class="btn btn-success fw-bold shadow-sm">
+                        Create Issue
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

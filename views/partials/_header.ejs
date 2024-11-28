@@ -1,0 +1,29 @@
+
+<!-- Navigation bar container with Bootstrap classes -->
+<nav class="navbar navbar-expand-sm"
+    style="background-color: #527db4; padding: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+    <!-- Container for the navbar content with flexible layout -->
+    <div
+        class="container-fluid d-flex align-items-center justify-content-between">
+        <!-- Logo and Brand Name Section -->
+        <a class="navbar-brand d-flex align-items-center" href="/"
+            style="color: #0a0b0e; font-weight: bold; font-size: 1.5rem; text-decoration: none;">
+            <!-- Logo Image with specific size and margin -->
+            <img src="/images/logo.png" alt="Logo"
+                style="width: 35px; height: 35px; margin-right: 10px;">
+            <!-- Brand Name with bold font and customized text style -->
+            Issue Tracker
+        </a>
+
+        <!-- Conditional Rendering of Forms (depends on the page title) -->
+        <div class="ms-auto me-4">
+            <!-- If the page title is 'Project Page', show the issue form -->
+            <% if(title === "Project Page") { %>
+            <%- include('_issue_form'); %>
+            <!-- Otherwise, show the project creation form -->
+            <% } else { %>
+            <%- include('_project_form'); %>
+            <% } %>
+        </div>
+    </div>
+</nav>

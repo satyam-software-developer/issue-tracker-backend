@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Metadata for Character Encoding, Compatibility, and Viewport Settings -->
+        <meta charset="UTF-8">
+        <!-- Specifies the character encoding as UTF-8 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Ensures IE uses the latest rendering engine -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Makes the site responsive to different screen sizes -->
+
+        <!-- Title of the Page (Dynamically set using EJS) -->
+        <title><%= title %></title>
+        <!-- Title of the page is dynamically set by EJS with the value from the backend -->
+
+        <!-- Custom Stylesheets -->
+        <!-- Link to the external stylesheet for custom styles -->
+        <link rel="stylesheet" href="../style.css">
+        <!-- This links to an external CSS file, ensure the correct relative path -->
+
+        <!-- Noty CSS for Notifications -->
+        <!-- External CSS for the Noty library, which is used to display notification messages -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+
+        <!-- Bootstrap CSS -->
+        <!-- Bootstrap framework for styling and responsive layout -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous">
+        <!-- Bootstrap CDN link for CSS with integrity hash for security -->
+
+        <!-- Custom Inline Styles (if any) -->
+        <%- style %>
+        <!-- EJS placeholder to inject custom inline styles passed from the backend -->
+    </head>
+    <body>
+        <!-- Header Include -->
+        <!-- This includes the header partial from the 'partials' directory using EJS -->
+        <%- include('./partials/_header'); %>
+
+        <!-- Main Body Content -->
+        <!-- This placeholder will be replaced with the body content passed from the backend -->
+        <%- body %>
+        <!-- EJS placeholder for the main body content to be rendered -->
+
+        <!-- Footer Include -->
+        <!-- This includes the footer partial from the 'partials' directory using EJS -->
+        <%- include('./partials/_footer'); %>
+
+        <!-- jQuery -->
+        <!-- jQuery library loaded via CDN for DOM manipulation and AJAX -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!-- Bootstrap Bundle with Popper -->
+        <!-- Bootstrap JS and Popper.js for handling interactive elements (modals, dropdowns, etc.) -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"></script>
+
+        <!-- Additional Scripts -->
+        <!-- EJS placeholder to inject additional scripts passed from the backend -->
+        <%- script %>
+        <!-- Custom JavaScript passed from the server-side, which can be included here -->
+    </body>
+</html>
