@@ -3,7 +3,7 @@
 Issue Tracker is a web-based application that allows users to create and manage projects and their related issues. It is built using Node.js and Express framework with MongoDB for data storage.
 
 1. Git repository link: https://github.com/satyam-software-developer/issue-tracker-backend.git
-2. Hosted link: https://satyam-software-developer.github.io/todolist-react-app/
+2. Hosted link: https://issuetracker-r4rt.onrender.com
 
 # Table of Contents
 
@@ -80,7 +80,7 @@ This project is licensed under the MIT License.
 
 # DEMO
 
-- https://satyam-software-developer.github.io/todolist-react-app/
+- https://issuetracker-r4rt.onrender.com
 
 # Author
 
